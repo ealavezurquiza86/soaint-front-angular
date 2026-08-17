@@ -1,0 +1,11 @@
+# Angular app (subcarpeta frontend-transacciones)
+frontend-transacciones/node_modules/
+frontend-transacciones/dist/
+frontend-transacciones/.angular/
+frontend-transacciones/coverage/
+frontend-transacciones/test-results/
+frontend-transacciones/playwright-report/
+
+# Sistema
+.DS_Store
+Thumbs.db

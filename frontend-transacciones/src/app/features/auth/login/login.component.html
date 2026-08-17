@@ -1,0 +1,25 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="login-header">
+      <span class="logo">⚡</span>
+      <h1>Soaint Transacciones</h1>
+      <p>Ingresa tus credenciales para continuar</p>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        Usuario
+        <input formControlName="username" placeholder="admin" autocomplete="username" />
+      </label>
+      <label>
+        Contraseña
+        <input formControlName="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+      </label>
+      @if (errorMsg()) {
+        <p class="error">{{ errorMsg() }}</p>
+      }
+      <button type="submit" [disabled]="form.invalid || loading()">
+        {{ loading() ? 'Ingresando...' : 'Iniciar sesión' }}
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="page">
+  <header>
+    <h1>Registrar Transacción</h1>
+    <p>Complete los datos. El secreto se cifrará antes de enviarse.</p>
+  </header>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card">
+    <label>
+      Operación
+      <input formControlName="operacion" placeholder="venta" />
+    </label>
+    <label>
+      Importe
+      <input formControlName="importe" placeholder="100.00" />
+    </label>
+    <label>
+      Cliente
+      <input formControlName="cliente" placeholder="Angel" />
+    </label>
+    <label>
+      Secreto
+      <input formControlName="secreto" type="password" placeholder="Texto a cifrar" />
+    </label>
+    @if (successMsg()) {
+      <div class="success">{{ successMsg() }}</div>
+    }
+    @if (errorMsg()) {
+      <div class="error">{{ errorMsg() }}</div>
+    }
+    <button type="submit" [disabled]="form.invalid || loading()">
+      {{ loading() ? 'Procesando...' : 'Registrar' }}
+    </button>
+  </form>
+</div>
